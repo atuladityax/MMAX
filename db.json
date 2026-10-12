@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "name": "Atul Aditya",
+      "email": "atuladityax@gmail.com",
+      "password": "Ramajee@123",
+      "role": "Admin",
+      "id": 1
+    },
+    {
+      "name": "efwef",
+      "email": "atyosfeafew@gmail.com",
+      "password": "rgegrgf3243",
+      "role": "Team Leader",
+      "id": 2
+    },
+    {
+      "name": "ergsger",
+      "email": "atyosfeaf@gmail.com",
+      "password": "ergrg43eg",
+      "role": "employee",
+      "id": 3
+    },
+    {
+      "name": "awwefsfcs",
+      "email": "atyosfeaf@gmail.com",
+      "password": "ergrg43eg",
+      "role": "employee",
+      "id": 4
+    }
+  ]
+}
