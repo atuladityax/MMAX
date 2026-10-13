@@ -1,8 +1,9 @@
 import "../Signup/Signup.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 const Signup = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,6 +49,7 @@ const Signup = () => {
         .post("http://localhost:8000/users", formData)
         .then(() => {
           alert("Registration successful!");
+          navigate("/login");
         })
         .catch((err) => console.log(err));
     }
