@@ -1,102 +1,181 @@
-
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useState } from "react";
-import "../Login/Login.css"
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import "../Login/Login.css";
+
 const Login = () => {
-    const [formData, setFormData] = useState({
-        email: "",
-        password: ""
-      });
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
-    const [errors, setErrors] = useState({});
-    const [valid, setValid] = useState(true);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const [errors, setErrors] = useState({});
 
-  let isValid = true;
-  let validationErrors = {};
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  if (!formData.email.trim()) {
-    isValid = false;
-    validationErrors.email = "Email Required";
-  } else if (
-    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
-  ) {
-    isValid = false;
-    validationErrors.email = "Email is not valid";
-  }
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-  if (!formData.password.trim()) {
-    isValid = false;
-    validationErrors.password = "Password Required";
-  }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  setErrors(validationErrors);
-  setValid(isValid);
+    let validationErrors = {};
 
-  // Stop if validation fails
-  if (!isValid) return;
+    // Email validation
+    if (!formData.email.trim()) {
+      validationErrors.email = "Email is required";
+    } else if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+    ) {
+      validationErrors.email = "Please enter a valid email";
+    }
 
-  axios
-    .get("http://localhost:8000/users")
-    .then((result) => {
+    // Password validation
+    if (!formData.password) {
+      validationErrors.password = "Password is required";
+    }
+
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) {
+      return;
+    }
+
+    try {
+      const result = await axios.get(
+        "http://localhost:8000/users"
+      );
+
       const user = result.data.find(
-        (user) => user.email === formData.email
+        (item) =>
+          item.email.toLowerCase() ===
+          formData.email.trim().toLowerCase()
       );
 
       if (!user) {
-        setErrors({ email: "Email is not registered" });
-        setValid(false);
-      } else if (user.password !== formData.password) {
-        setErrors({ password: "Wrong password" });
-        setValid(false);
-      } else {
-        alert("Login successful!");
-    
+        setErrors({
+          email: "Email is not registered",
+        });
+        return;
       }
-    })
-    .catch((err) => {
-      console.log(err);
-      alert("Unable to connect to the server.");
-    });
-};
+
+      if (user.password !== formData.password) {
+        setErrors({
+          password: "Incorrect password",
+        });
+        return;
+      }
+
+      const rawRole = user.role.trim().toLowerCase().replace(/\s+/g, "");
+      const role =
+        rawRole === "admin"
+          ? "admin"
+          : rawRole === "employee"
+            ? "employee"
+            : rawRole === "lead" || rawRole === "teamleader"
+              ? "lead"
+              : null;
+
+      if (!role) {
+        setErrors({ general: "Invalid user role" });
+        return;
+      }
+
+      const loggedInUser = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: role,
+      };
+
+      login(loggedInUser);
+
+      if (role === "admin") {
+        navigate("/admin");
+      } else if (role === "lead") {
+        navigate("/lead");
+      } else if (role === "employee") {
+        navigate("/employee");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+
+      setErrors({
+        general:
+          "Unable to connect to the server. Please try again.",
+      });
+    }
+  };
 
   return (
-    <>
     <div className="container">
-        <div className="header">
-            <h2>MMAX</h2> 
-            <p>Log in to your account</p>
-            <form onSubmit={handleSubmit} action="" className="login">
-                    {!valid && (
-                    <span className="text-danger">
-                     {errors.email || errors.password}
-                     </span>
-)}
-                <label htmlFor="">Email</label>
-                <input type="email" 
-                name="email"
-                onChange={(event) =>
-                setFormData({ ...formData, email: event.target.value })
-              }
-                />
-                <label htmlFor="">Password</label>
-                <input type="password"
-                name="password"
-                onChange={(event) => setFormData({ ...formData , password: event.target.value })} 
-                />
-                <button className="btn">Login</button>
-            </form>
-            <div className="sign">
-                <span>No Account? <Link to="/signup">Signup </Link> </span>
-            </div>
-        </div>
-    </div>
-    </>
-  )
-}
+      <div className="header">
+        <h2>MMAX</h2>
 
-export default Login
+        <p>Log in to your account</p>
+
+        <form onSubmit={handleSubmit} className="login">
+          {errors.general && (
+            <p className="text-danger">
+              {errors.general}
+            </p>
+          )}
+
+          <label htmlFor="email">Email</label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+
+          {errors.email && (
+            <span className="text-danger">
+              {errors.email}
+            </span>
+          )}
+
+          <label htmlFor="password">Password</label>
+
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+
+          {errors.password && (
+            <span className="text-danger">
+              {errors.password}
+            </span>
+          )}
+
+          <button type="submit" className="btn">
+            Login
+          </button>
+        </form>
+
+        <div className="sign">
+          <span>
+            No Account? <Link to="/signup">Signup</Link>
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

@@ -13,6 +13,27 @@
       "password": "Swati@123",
       "role": "Admin",
       "id": 2
+    },
+    {
+      "name": "Ranu",
+      "email": "ranu@gmail.com",
+      "password": "Swati@123",
+      "role": "employee",
+      "id": 3
+    },
+    {
+      "name": "atul adityaa",
+      "email": "atyoaf@gmail.com",
+      "password": "kjbkbbbj",
+      "role": "employee",
+      "id": 4
+    },
+    {
+      "name": "gargi",
+      "email": "gargi@gmail.com",
+      "password": "Swati@123",
+      "role": "Team Leader",
+      "id": 5
     }
   ]
 }
