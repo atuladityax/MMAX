@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/useAuth";
 import "../Login/Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useAuth();
 
   const [formData, setFormData] = useState({
@@ -123,6 +124,11 @@ const Login = () => {
         <p>Log in to your account</p>
 
         <form onSubmit={handleSubmit} className="login">
+          {location.state?.message && (
+            <p className="text-success" role="status">
+              {location.state.message}
+            </p>
+          )}
           {errors.general && (
             <p className="text-danger">
               {errors.general}

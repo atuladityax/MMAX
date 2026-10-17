@@ -11,7 +11,6 @@ import Dashboard from "./pages/admin/Dashboard";
 import Teams from "./pages/admin/Teams";
 import TeamDetails from "./pages/admin/TeamDetails";
 import Employees from "./pages/admin/Employees";
-import Approvals from "./pages/admin/Approvals";
 import EmployeeTasks from "./pages/admin/EmployeeTasks";
 
 // Employee
@@ -36,7 +35,6 @@ function App() {
           <Route path="/admin/teams" element={<Teams />} />
           <Route path="/admin/teams/:id" element={<TeamDetails />} />
           <Route path="/admin/employees" element={<Employees />} />
-          <Route path="/admin/approvals" element={<Approvals />} />
           <Route path="/admin/tasks" element={<EmployeeTasks />} />
         </Route>
       </Route>

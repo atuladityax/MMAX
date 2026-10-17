@@ -1,39 +1,461 @@
 {
   "users": [
     {
-      "name": "Komal Singh ",
-      "email": "swati21@gmail.com",
-      "password": "Swati@123",
-      "role": "Admin",
-      "id": 1
+      "id": "1",
+      "name": "Komal Singh",
+      "email": "komal@example.com",
+      "password": "Demo@123",
+      "role": "Admin"
     },
     {
-      "name": "Komal Singh ",
-      "email": "swati21@gmail.com",
-      "password": "Swati@123",
-      "role": "Admin",
-      "id": 2
+      "id": "2",
+      "name": "Swati Sharma",
+      "email": "swati@example.com",
+      "password": "Demo@123",
+      "role": "Admin"
     },
     {
-      "name": "Ranu",
-      "email": "ranu@gmail.com",
-      "password": "Swati@123",
+      "id": "3",
+      "name": "Ranu Kumari",
+      "email": "ranu@example.com",
+      "password": "Demo@123",
       "role": "employee",
-      "id": 3
+      "teamId": "T3"
     },
     {
-      "name": "atul adityaa",
-      "email": "atyoaf@gmail.com",
-      "password": "kjbkbbbj",
+      "id": "4",
+      "name": "Atul Aditya",
+      "email": "atul@example.com",
+      "password": "Demo@123",
       "role": "employee",
-      "id": 4
+      "teamId": "T3"
     },
     {
-      "name": "gargi",
-      "email": "gargi@gmail.com",
-      "password": "Swati@123",
+      "id": "5",
+      "name": "Gargi Verma",
+      "email": "gargi@example.com",
+      "password": "Demo@123",
       "role": "Team Leader",
-      "id": 5
+      "status": "approved"
+    },
+    {
+      "id": "6",
+      "name": "Ravina Kumari",
+      "email": "ravina@example.com",
+      "password": "Demo@123",
+      "role": "Admin",
+      "status": "approved"
+    },
+    {
+      "id": "7",
+      "name": "Aman Kumar",
+      "email": "aman@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T1",
+      "status": "approved"
+    },
+    {
+      "id": "8",
+      "name": "Priya Singh",
+      "email": "priya@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T2",
+      "status": "approved"
+    },
+    {
+      "id": "9",
+      "name": "Rahul Raj",
+      "email": "rahul@example.com",
+      "password": "Demo@123",
+      "role": "Team Leader",
+      "status": "approved"
+    },
+    {
+      "id": "10",
+      "name": "Neha Kumari",
+      "email": "neha@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T4",
+      "status": "approved"
+    },
+    {
+      "id": "11",
+      "name": "Vikash Kumar",
+      "email": "vikash@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T5",
+      "status": "approved"
+    },
+    {
+      "id": "12",
+      "name": "Anjali Gupta",
+      "email": "anjali@example.com",
+      "password": "Demo@123",
+      "role": "Team Leader",
+      "status": "approved"
+    },
+    {
+      "id": "13",
+      "name": "Rohit Sharma",
+      "email": "rohit@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T6",
+      "status": "approved"
+    },
+    {
+      "id": "14",
+      "name": "Pooja Kumari",
+      "email": "pooja@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T7",
+      "status": "approved"
+    },
+    {
+      "id": "15",
+      "name": "Deepak Raj",
+      "email": "deepak@example.com",
+      "password": "Demo@123",
+      "role": "Team Leader",
+      "status": "approved"
+    },
+    {
+      "id": "16",
+      "name": "Sneha Singh",
+      "email": "sneha@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T8",
+      "status": "pending"
+    },
+    {
+      "id": "17",
+      "name": "Karan Kumar",
+      "email": "karan@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T9",
+      "status": "approved"
+    },
+    {
+      "id": "18",
+      "name": "Simran Kaur",
+      "email": "simran@example.com",
+      "password": "Demo@123",
+      "role": "Team Leader",
+      "status": "approved"
+    },
+    {
+      "id": "19",
+      "name": "Abhishek Raj",
+      "email": "abhishek@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T10",
+      "status": "pending"
+    },
+    {
+      "id": "20",
+      "name": "Nisha Verma",
+      "email": "nisha@example.com",
+      "password": "Demo@123",
+      "role": "employee",
+      "teamId": "T11",
+      "status": "approved"
     }
-  ]
+  ],
+  "teams": [
+    {
+      "id": "T1",
+      "name": "Development Team",
+      "leadId": "9"
+    },
+    {
+      "id": "T2",
+      "name": "Design Team",
+      "leadId": "12"
+    },
+    {
+      "id": "T3",
+      "name": "Game of Thrones",
+      "leadId": "5"
+    },
+    {
+      "id": "T4",
+      "name": "Testing Team",
+      "leadId": "15"
+    },
+    {
+      "id": "T5",
+      "name": "Marketing Team",
+      "leadId": "18"
+    },
+    {
+      "id": "T6",
+      "name": "Frontend Team",
+      "leadId": "9"
+    },
+    {
+      "id": "T7",
+      "name": "Backend Team",
+      "leadId": "12"
+    },
+    {
+      "id": "T8",
+      "name": "Support Team",
+      "leadId": "15"
+    },
+    {
+      "id": "T9",
+      "name": "QA Team",
+      "leadId": "18"
+    },
+    {
+      "id": "T10",
+      "name": "Mobile App Team",
+      "leadId": "9"
+    },
+    {
+      "id": "T11",
+      "name": "Cloud Team",
+      "leadId": "12"
+    },
+    {
+      "id": "T12",
+      "name": "Security Team",
+      "leadId": "15"
+    },
+    {
+      "id": "T13",
+      "name": "Data Analytics Team",
+      "leadId": "18"
+    },
+    {
+      "id": "T14",
+      "name": "AI Research Team",
+      "leadId": "9"
+    },
+    {
+      "id": "T15",
+      "name": "Product Team",
+      "leadId": "12"
+    },
+    {
+      "id": "T16",
+      "name": "Operations Team",
+      "leadId": "15"
+    },
+    {
+      "id": "T17",
+      "name": "HR Team",
+      "leadId": "18"
+    },
+    {
+      "id": "T18",
+      "name": "Finance Team",
+      "leadId": "9"
+    },
+    {
+      "id": "T19",
+      "name": "Content Team",
+      "leadId": "12"
+    },
+    {
+      "id": "T20",
+      "name": "Research Team",
+      "leadId": "15"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Network Problem",
+      "description": "Investigate and resolve network connectivity issues",
+      "assignedTo": "3",
+      "dueDate": "2026-10-16",
+      "status": "completed"
+    },
+    {
+      "id": "2",
+      "title": "Create Digital Board",
+      "description": "Design a digital board with red boxes on a white background",
+      "assignedTo": "4",
+      "dueDate": "2026-10-23",
+      "status": "completed"
+    },
+    {
+      "id": "3",
+      "title": "Build Login Page",
+      "description": "Create a responsive login page with form validation",
+      "assignedTo": "7",
+      "dueDate": "2026-10-18",
+      "status": "in-progress"
+    },
+    {
+      "id": "4",
+      "title": "Design Dashboard",
+      "description": "Prepare the admin dashboard UI and charts",
+      "assignedTo": "8",
+      "dueDate": "2026-10-20",
+      "status": "completed"
+    },
+    {
+      "id": "5",
+      "title": "Fix API Errors",
+      "description": "Resolve server errors in the employee API",
+      "assignedTo": "10",
+      "dueDate": "2026-10-21",
+      "status": "pending"
+    },
+    {
+      "id": "6",
+      "title": "Database Optimization",
+      "description": "Improve query performance and database indexing",
+      "assignedTo": "11",
+      "dueDate": "2026-10-22",
+      "status": "in-progress"
+    },
+    {
+      "id": "7",
+      "title": "Write Unit Tests",
+      "description": "Add unit tests for authentication and task modules",
+      "assignedTo": "13",
+      "dueDate": "2026-10-24",
+      "status": "pending"
+    },
+    {
+      "id": "8",
+      "title": "Update Website Content",
+      "description": "Review and update homepage content",
+      "assignedTo": "14",
+      "dueDate": "2026-10-25",
+      "status": "completed"
+    },
+    {
+      "id": "9",
+      "title": "Create Employee Report",
+      "description": "Generate a report of employee performance",
+      "assignedTo": "17",
+      "dueDate": "2026-10-26",
+      "status": "in-progress"
+    },
+    {
+      "id": "10",
+      "title": "Implement Notifications",
+      "description": "Add task assignment and deadline notifications",
+      "assignedTo": "19",
+      "dueDate": "2026-10-27",
+      "status": "pending"
+    },
+    {
+      "id": "11",
+      "title": "Mobile UI Fixes",
+      "description": "Fix layout issues on small mobile screens",
+      "assignedTo": "20",
+      "dueDate": "2026-10-28",
+      "status": "pending"
+    },
+    {
+      "id": "12",
+      "title": "Add Search Feature",
+      "description": "Implement search and filtering for tasks",
+      "assignedTo": "3",
+      "dueDate": "2026-10-29",
+      "status": "completed"
+    },
+    {
+      "id": "13",
+      "title": "Create Registration Form",
+      "description": "Build a registration form with required fields",
+      "assignedTo": "4",
+      "dueDate": "2026-10-30",
+      "status": "in-progress"
+    },
+    {
+      "id": "14",
+      "title": "Improve App Performance",
+      "description": "Reduce loading time and unnecessary renders",
+      "assignedTo": "7",
+      "dueDate": "2026-10-31",
+      "status": "pending"
+    },
+    {
+      "id": "15",
+      "title": "Implement Role Permissions",
+      "description": "Restrict application features based on user roles",
+      "assignedTo": "8",
+      "dueDate": "2026-11-01",
+      "status": "completed"
+    },
+    {
+      "id": "16",
+      "title": "Fix Task Status Bug",
+      "description": "Ensure task status changes are saved correctly",
+      "assignedTo": "10",
+      "dueDate": "2026-11-02",
+      "status": "completed"
+    },
+    {
+      "id": "17",
+      "title": "Create Team Management Page",
+      "description": "Add team creation and team leader assignment",
+      "assignedTo": "11",
+      "dueDate": "2026-11-03",
+      "status": "pending"
+    },
+    {
+      "id": "18",
+      "title": "Add Pagination",
+      "description": "Add pagination to employee and task lists",
+      "assignedTo": "13",
+      "dueDate": "2026-11-04",
+      "status": "in-progress"
+    },
+    {
+      "id": "19",
+      "title": "Test Authentication",
+      "description": "Verify login, logout, and invalid password handling",
+      "assignedTo": "14",
+      "dueDate": "2026-11-05",
+      "status": "pending"
+    },
+    {
+      "id": "20",
+      "title": "Prepare Project Documentation",
+      "description": "Document API endpoints and setup instructions",
+      "assignedTo": "17",
+      "dueDate": "2026-11-06",
+      "status": "completed"
+    },
+    {
+      "title": "Build Logut Page",
+      "description": "Create a responsive login page with form validation",
+      "assignedTo": "7",
+      "teamId": "T1",
+      "status": "todo",
+      "id": "pPtdFePwlnE"
+    },
+    {
+      "title": "Implement Role Permissions",
+      "description": "Restrict application features based on user roles",
+      "assignedTo": "8",
+      "teamId": "T2",
+      "status": "completed",
+      "id": "8Jdwu7r4JDw"
+    },
+    {
+      "title": "Implement Role Permissions",
+      "description": "Implement search and filtering for tasks",
+      "assignedTo": "3",
+      "teamId": "T3",
+      "status": "completed",
+      "id": "CDg5FlpIrEs"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

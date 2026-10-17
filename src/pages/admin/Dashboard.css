@@ -1,0 +1,75 @@
+.dash-page {
+  width: 100%;
+  color: #1f2937;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dash-page h1 {
+  font-size: 28px;
+  margin: 0 0 20px;
+  color: #1f2937;
+}
+
+.dash-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.dash-card {
+  flex: 1 1 200px;
+  min-width: 0;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #4f46e5;
+}
+
+.dash-card p {
+  margin: 0 0 8px;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.dash-card h2 {
+  margin: 0;
+  font-size: 36px;
+  color: #1f2937;
+}
+
+.dash-green { border-left-color: #16a34a; }
+.dash-orange { border-left-color: #d97706; }
+
+.dash-chart-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.dash-chart-box h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.dash-sub {
+  margin: 4px 0 16px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.dash-empty {
+  padding: 30px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.dash-error {
+  margin-bottom: 12px;
+  color: #dc2626;
+  font-size: 14px;
+}

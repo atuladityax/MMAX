@@ -1,90 +1,115 @@
-body {
-    margin: 0;
-    background-color: #0c0c0d;
-    color: #f4f4f5;
-}
-* {
-    box-sizing: border-box;
-
-}
 .container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: safe center;
+  padding: 28px 18px;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(99, 102, 241, 0.13), transparent 35%),
+    radial-gradient(ellipse at 85% 90%, rgba(14, 165, 233, 0.1), transparent 32%),
+    #f5f7fb;
 }
 
-.login {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 40px;
+.container .header {
+  width: min(100%, 440px);
+  padding: clamp(28px, 6vw, 46px);
+  color: #172033;
+  background: #fff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(30, 41, 59, 0.12);
 }
 
-h2 {
-    text-align: center;
-    font-size: 28px;
-    color: #f4f4f5;
-    font-weight: bolder;
+.container .header h2 {
+  margin: 0;
+  color: #3730a3;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-align: center;
 }
 
-p {
-    text-align: center;
-    font-size: 19px;
+.container .header > p {
+  margin: 8px 0 0;
+  color: #697586;
+  font-size: 15px;
+  text-align: center;
 }
 
-.header {
-    background-color: #18181a;
-    color: #f4f4f5;
-    box-shadow: rgba(0, 0, 0, 0.55) 0px 7px 29px 0px;
-    padding: 60px;
-    border-radius: 20px;
+.container .login {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 30px;
 }
 
-form {
-    width: 200px;
+.container .login label {
+  margin-top: 8px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 650;
 }
 
-input {
-    width: 100%;
-    height: 35px;
-    font-size: 15px;
-    background-color: #242426;
-    color: #f4f4f5;
-    border: 1px solid #3a3a3d;
-
+.container .login input {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  color: #172033;
+  background: #fff;
+  border: 1px solid #d8deea;
+  border-radius: 9px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
 }
 
-.btn {
+.container .login input::placeholder {
+  color: #98a2b3;
+}
 
-    margin-top: 15px;
-    background-color: #303034;
-    color: #f4f4f5;
-    border: none;
-    height: 35px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
+.container .login input:focus {
+  border-color: #6366f1;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
 
+.container .login .btn {
+  min-height: 46px;
+  margin-top: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  background: #4f46e5;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease;
 }
-.sign{
-    text-align: center;
-    margin-top: 20px;
 
+.container .login .btn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
 }
-label{
-    font-size: 18px;
-    margin-top: 5px;
-    color: #e4e4e7;
+
+.container .text-danger {
+  margin: 0;
+  color: #b42318;
+  font-size: 13px;
 }
-input:focus {
-    border-color: #71717a;
-    box-shadow: 0 0 0 3px rgba(161, 161, 170, 0.15);
+
+.container .text-success {
+  margin: 0;
+  color: #167448;
+  font-size: 13px;
 }
-.btn:hover {
-    background-color: #424247;
+
+.container .sign {
+  margin-top: 22px;
+  color: #697586;
+  font-size: 13px;
+  text-align: center;
 }
-a {
-    color: #d4d4d8;
+
+.container .sign a {
+  color: #4f46e5;
+  font-weight: 700;
 }

@@ -1,21 +1,19 @@
 import "./Sidebar.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/useAuth";
 
 const menus = {
   admin: [
     { label: "Dashboard", path: "/admin" },
     { label: "Teams", path: "/admin/teams" },
     { label: "Employees", path: "/admin/employees" },
-    { label: "Approvals", path: "/admin/approvals" },
     { label: "Employee Tasks", path: "/admin/tasks" },
   ],
   lead: [
-    { label: "Dashboard", path: "/lead" },
+    { label: "My Team", path: "/lead" },
     { label: "Tasks", path: "/lead/tasks" },
   ],
   employee: [
-    { label: "Dashboard", path: "/employee" },
     { label: "My Tasks", path: "/employee/tasks" },
   ],
 };
@@ -37,9 +35,10 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar${normalizedRole === "employee" ? " sidebar-employee" : ""}`}>
       <div className="sidebar-brand">
         <h2>MMAX</h2>
+        {normalizedRole === "employee" && <p>Employee</p>}
       </div>
 
       <nav className="sidebar-menu">
@@ -63,7 +62,7 @@ const Sidebar = () => {
           <p>{user?.role || "Guest"}</p>
         </div>
         <button className="logout-btn" onClick={handleLogout}>
-          Logout
+          {normalizedRole === "employee" ? "Sign out" : "Logout"}
         </button>
       </div>
     </aside>
